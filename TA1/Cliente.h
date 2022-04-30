@@ -28,6 +28,17 @@ public:
 	void setdY_Cliente(short v) { dY = v; }
 	void setisVIP(bool v) {isVIP = v; }
 
+	//Metodos - borrar - mover - dibujar
+	void Borrar() {
+		Console::SetCursorPosition(x, y);
+		cout << " ";
+	}
+	void Mover() {
+
+	}
+	void Dibuujar() {
+
+	}
 
 
 };

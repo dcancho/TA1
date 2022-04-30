@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 using namespace std;
+using namespace System;
 
 class Entidad {
 protected:
