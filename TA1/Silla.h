@@ -10,67 +10,68 @@ private:
 	bool isOccupied;
 	short posX;
 	short posY;
-	char* ASCII;
+	char ASCII[2];
 public:
-	Silla();
-	~Silla();
-	void PrintSilla();
-	bool getIsOccupied();
-	short getPosX();
-	short getPosY();
-	char* getAscii();
-	void setIsOccupied(bool state);
-	void setPosX(short posx);
-	void setPosY(short posy);
+	Silla()
+	{
+		isOccupied = false;
+		posX = 0;
+		posY = 0;
+		ASCII[0] = '[';
+		ASCII[1] = ']';
+	}
+	Silla(short x, short y)
+	{
+		isOccupied = false;
+		posX = x;
+		posY = y;
+		ASCII[0] = '[';
+		ASCII[1] = ']';
+	}
+
+	~Silla()
+	{
+		delete[] ASCII;
+	}
+
+
+	void PrintSilla()
+	{
+
+	}
+
+	bool getIsOccupied()
+	{
+		return isOccupied;
+	}
+
+	short getPosX()
+	{
+		return posX;
+	}
+
+	short getPosY()
+	{
+		return posY;
+	}
+
+	char* getAscii()
+	{
+		return ASCII;
+	}
+
+	void setIsOccupied(bool state)
+	{
+		isOccupied = state;
+	}
+
+	void setPosX(short posx)
+	{
+		posX = posx;
+	}
+
+	void setPosY(short posy)
+	{
+		posY = posy;
+	}
 };
-
-Silla::Silla()
-{
-
-}
-
-Silla::~Silla()
-{
-	delete[] ASCII;
-}
-
-
-void Silla::PrintSilla()
-{
-	
-}
-
-bool Silla::getIsOccupied()
-{
-	return isOccupied;
-}
-
-short Silla::getPosX()
-{
-	return posX;
-}
-
-short Silla::getPosY()
-{
-	return posY;
-}
-
-char* Silla::getAscii()
-{
-	return ASCII;
-}
-
-void Silla::setIsOccupied(bool state)
-{
-	isOccupied = state;
-}
-
-void Silla::setPosX(short posx)
-{
-	posX = posx;
-}
-
-void Silla::setPosY(short posy)
-{
-	posY = posy;
-}

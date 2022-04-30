@@ -42,7 +42,7 @@ public:
 		}
 		posY += dY;
 	}
-	void Dibuujar() {
+	void Dibuujar(short x, short y) {
 		Console::SetCursorPosition(x, y); cout << "O";
 	}
 

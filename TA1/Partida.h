@@ -16,6 +16,7 @@ private:
 	Mesa** mesas;
 	Mozo** mozos;
 	Cliente** clientes;
+
 public:
 	/// <summary>
 	/// Constructor por defecto. NO USAR.
@@ -53,5 +54,34 @@ public:
 		tCliente = t;
 		duration = gameDuration;
 		timeElapsed = gameTimeElapsed;
+	}
+
+	~Partida()
+	{
+		TerminarPartida();
+		delete[] mesas;
+		delete[] mozos;
+		delete[] clientes;
+	}
+
+	void InitMesas(short nMesas=4)
+	{
+
+	}
+	void InitMozos(short nMozos=6)
+	{
+
+	}
+	void InvokeClientes()
+	{
+
+	}
+	void InvokeClientesVIP()
+	{
+
+	}
+	void TerminarPartida()
+	{
+
 	}
 };
