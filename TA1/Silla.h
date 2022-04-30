@@ -55,7 +55,7 @@ short Silla::getPosY()
 	return posY;
 }
 
-char** Silla::getAscii()
+char* Silla::getAscii()
 {
 	return ASCII;
 }
