@@ -32,9 +32,5 @@ int main()
 	partida->InitMesas();
 	partida->InitMozos();
 
-	while (1)
-	{
-
-	}
 	return 0;
 }
