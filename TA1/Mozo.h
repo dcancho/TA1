@@ -4,13 +4,13 @@
 class Mozo : public Entidad {
 protected:
 	short score;
-	char** caracteres;
+	char caracteres;
 public:
 	//constructores
 	Mozo(){}
-	Mozo(short posX, short posY, short v, short dX, short dY, short score, char** carcateres) :Entidad(posX, posY, v, dX, dY) {
+	Mozo(short posX, short posY, short v, short dX, short dY, short score, char* caracteres) :Entidad(posX, posY, v, dX, dY) {
 		this->score = score;
-		carcateres = new char*[0];
+		caracteres = new char[2];
 	}
 	//Destructor
 	~Mozo() {}
