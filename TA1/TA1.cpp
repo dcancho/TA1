@@ -3,7 +3,8 @@
 #include <conio.h>
 #include "Mesa.h"
 #include "Entidad.h"
-
+using namespace std;
+using namespace System;
 int main()
 {
     srand = time(NULL);
