@@ -1,11 +1,9 @@
 #include "pch.h"
 #include <iostream>
 #include <conio.h>
+#include "Mesa.h"
 
-using namespace std;
-
-
-int main(array<System::String ^> ^args)
+int main()
 {
     int value = 0;
     std::cout << "Hello world!";
