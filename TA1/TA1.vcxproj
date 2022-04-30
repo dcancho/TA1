@@ -126,9 +126,11 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cliente.h" />
     <ClInclude Include="Entidad.h" />
     <ClInclude Include="Mesa.h" />
     <ClInclude Include="Mozo.h" />
+    <ClInclude Include="Partida.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Silla.h" />
