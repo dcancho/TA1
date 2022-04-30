@@ -10,7 +10,7 @@ private:
 	bool isOccupied;
 	short posX;
 	short posY;
-	char** ASCII;
+	char* ASCII;
 public:
 	Silla();
 	~Silla();
@@ -18,7 +18,7 @@ public:
 	bool getIsOccupied();
 	short getPosX();
 	short getPosY();
-	char** getAscii();
+	char* getAscii();
 	void setIsOccupied(bool state);
 	void setPosX(short posx);
 	void setPosY(short posy);
@@ -27,6 +27,11 @@ public:
 Silla::Silla()
 {
 
+}
+
+Silla::~Silla()
+{
+	delete[] ASCII;
 }
 
 
