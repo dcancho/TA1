@@ -1,7 +1,7 @@
 #pragma once
 #include"Entidad.h"
 
-class Cliente : public Entidad{
+class Cliente : public Entidad {
 
 protected:
 	bool isVIP;
@@ -12,6 +12,9 @@ public:
 	Cliente(short posX, short posY, short v, short dX, short dY, bool isVIP, char** carcateres) :Entidad(posX, posY, v, dX, dY) {
 		this->isVIP = isVIP;
 		caracteres = new char* [0];
+		posX = 5 - rand() % (75 + 1 - 5);
+		posY= 5 - rand() % (35 + 1 - 5);
+
 	}
 	//Destructor
 	~Cliente() {}
@@ -26,11 +29,11 @@ public:
 	void setposY_Cliente(short v) { posY = v; }
 	void setdX_Cliente(short v) { dX = v; }
 	void setdY_Cliente(short v) { dY = v; }
-	void setisVIP(bool v) {isVIP = v; }
-
+	void setisVIP(bool v) { isVIP = v; }
+    // min - rand()%(maximo + 1-min)//
 	//Metodos - borrar - mover - dibujar
 	void Borrar() {
-		Console::SetCursorPosition(x, y);
+		Console::SetCursorPosition(posX, posY);
 		cout << " ";
 	}
 	void Mover() {
