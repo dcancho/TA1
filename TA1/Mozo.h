@@ -26,4 +26,11 @@ public:
 	void setdX_Mozo(short v) { dX = v; }
 	void setdY_Mozo(short v) { dY = v; }
 	void setScore(short v) { score = v; }
+	//Metodos - borrar - mover - dibujar
+	void Borrar() {
+		Console::SetCursorPosition(posX, posY);
+		cout << "   ";
+	}
+
+
 };

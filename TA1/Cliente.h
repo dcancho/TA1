@@ -43,6 +43,7 @@ public:
 		posY += dY;
 	}
 	void Dibuujar() {
+		Console::ForegroundColor = ConsoleColor::White;
 		Console::SetCursorPosition(x, y); cout << "O";
 	}
 
