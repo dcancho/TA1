@@ -2,6 +2,7 @@
 #include <iostream>
 #include <conio.h>
 #include "Mesa.h"
+#include "Entidad.h"
 
 int main()
 {
