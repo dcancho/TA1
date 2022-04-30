@@ -8,9 +8,9 @@ protected:
 public:
 	//constructores
 	Mozo(){}
-	Mozo(short posX, short posY, short v, short dX, short dY, short score, char* caracteres) :Entidad(posX, posY, v, dX, dY) {
+	Mozo(short posX, short posY, short v, short dX, short dY, short score, char caracter) :Entidad(posX, posY, v, dX, dY) {
 		this->score = score;
-		caracteres = new char[2];
+		caracteres = caracter;
 	}
 	//Destructor
 	~Mozo() {}

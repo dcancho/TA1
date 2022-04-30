@@ -4,7 +4,7 @@
 class Mesa {
 private:
 	char ID;
-	Silla* sillas;
+	Silla** sillas;
 	short posX;
 	short posY;
 	char** ascii;
