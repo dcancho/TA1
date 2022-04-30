@@ -13,8 +13,9 @@ public:
 		this->isVIP = isVIP;
 		caracteres = new char* [0];
 	}
-	~Cliente() {}
 	//Destructor
+	~Cliente() {}
+	
 
 
 
