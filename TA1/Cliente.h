@@ -37,7 +37,7 @@ public:
 		cout << " ";
 	}
 	void Mover() {
-		if (posY < 1) {
+		if (posY > 38 || posY < 1) {
 			Borrar();
 		}
 		posY += dY;
