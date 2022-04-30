@@ -14,7 +14,7 @@ public:
 		caracteres = new char* [0];
 		posX = 5 - rand() % (75 + 1 - 5);
 		posY= 5 - rand() % (35 + 1 - 5);
-
+		dY = 2;
 	}
 	//Destructor
 	~Cliente() {}
@@ -37,10 +37,13 @@ public:
 		cout << " ";
 	}
 	void Mover() {
-
+		if (posY < 1) {
+			Borrar();
+		}
+		posY += dY;
 	}
 	void Dibuujar() {
-
+		Console::SetCursorPosition(x, y); cout << "O";
 	}
 
 
