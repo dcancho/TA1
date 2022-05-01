@@ -103,7 +103,6 @@ public:
 			clientes.emplace_back(Cliente(short(r.Next(0, 39)), (short(79 * r.Next(0, 2))), 1, 1, 0, true));
 		}
 	}
-	
 	void TerminarPartida()
 	{
 		short position = 0;
@@ -121,4 +120,8 @@ public:
 	}
 	Mesa** getMesas() { return mesas; }
 	Mozo** getMozos() { return mozos; }
+	int getTimeElapsed()
+	{
+		return timeElapsed;
+	}
 };
