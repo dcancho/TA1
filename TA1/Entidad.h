@@ -23,12 +23,17 @@ public:
 	void Mover()
 	{
 		posX = posX + int(dX * v);
-		posY = posY + (dY * v);
+		posY = posY + int(dY * v);
 
 		if (posX == -1 || posX == 81)
 		{
 			posX == posX - int(dX * v);
 			dX == dX * -1;
+		}
+		else if (posY == -1 || posY == 41)
+		{
+			posY == posY - int(dY * v);
+			dY == dY * -1;
 		}
 	}
 };

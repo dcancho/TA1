@@ -30,6 +30,9 @@ int main()
 
 	Partida* partida = new Partida(hSize, vSize, n, x, t, 120000, 0);
 	
+	
+
+
 	for (int i = 0; i < 4; i++)
 	{
 		partida->getMesas()[0]->PrintMesa();
