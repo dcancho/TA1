@@ -31,7 +31,11 @@ int main()
 	Partida* partida = new Partida(hSize, vSize, n, x, t, 120000, 0);
 	partida->InitMesas();
 	partida->InitMozos();
-
+	
+	for (int i = 0; i < 4; i++)
+	{
+		partida.
+	}
 	while (1)
 	{
 

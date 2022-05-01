@@ -44,7 +44,7 @@ public:
 	}
 	void Dibuujar() {
 		Console::ForegroundColor = ConsoleColor::White;
-		Console::SetCursorPosition(x, y); cout << "O";
+		Console::SetCursorPosition(posX, posY); cout << "O";
 	}
 
 
