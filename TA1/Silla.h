@@ -37,7 +37,11 @@ public:
 
 	void PrintSilla()
 	{
-
+		for (int i = 0; i < 2; i++)
+		{
+			Console::SetCursorPosition(posX+i, posY);
+			cout << ASCII[i];
+		}
 	}
 
 	bool getIsOccupied()

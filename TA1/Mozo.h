@@ -52,7 +52,7 @@ public:
 			;break;
 
 		}
-		Console::SetCursorPosition(posX, posY); cout << "/_\";
+		Console::SetCursorPosition(posX, posY); cout << "/_\\";
 		Console::ForegroundColor = ConsoleColor::White;
 	}
 

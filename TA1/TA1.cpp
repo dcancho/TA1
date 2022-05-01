@@ -29,16 +29,14 @@ int main()
 	} while (!(t > 0 || t <= 120000 || (t*n)<=120000));
 
 	Partida* partida = new Partida(hSize, vSize, n, x, t, 120000, 0);
-	partida->InitMesas();
-	partida->InitMozos();
 	
 	for (int i = 0; i < 4; i++)
 	{
-		
+		partida->getMesas()[0]->PrintMesa();
+		partida->getMesas()[1]->PrintMesa();
+		partida->getMesas()[2]->PrintMesa();
+		partida->getMesas()[3]->PrintMesa();
 	}
-	while (1)
-	{
-
-	}
+	_getch();
 	return 0;
 }

@@ -23,22 +23,25 @@ public:
 	Silla** InitSillas(short nSillas = 4)
 	{
 		Silla** sillas = new Silla*[4];
-		sillas[0] = new Silla(posX, posY + 1);
-		sillas[1] = new Silla(posX + 5, posY + 1);
-		sillas[2] = new Silla(posX, posY + 2);
-		sillas[3] = new Silla(posX + 5, posY + 2);
+		sillas[0] = new Silla(posX, posY - 1);
+		sillas[1] = new Silla(posX + 4, posY - 1);
+		sillas[2] = new Silla(posX, posY + 3);
+		sillas[3] = new Silla(posX + 4, posY + 3);
 		return sillas;
 	}
 	void PrintMesa()
 	{
-		for (int i = 0; i < 6; i++)
+		for (int i = 0; i < 2; i++)
 		{
-			for (int j = 0; j < 2; j++)
+			for (int j = 0; j < 6; j++)
 			{
-				Console::SetCursorPosition(9+i,9+j);
+				Console::SetCursorPosition(posX+j,posY+i);
 				cout << ASCII[i][j];
 			}
 		}
-		
+		for (int i = 0; i < 4; i++)
+		{
+			sillas[i]->PrintSilla();
+		}
 	}
 };
