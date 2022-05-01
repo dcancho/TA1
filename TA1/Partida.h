@@ -87,7 +87,7 @@ public:
 		mozos[5] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), 1, short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 6);
 		return mozos;
 	}
-	void InvokeClientes()
+	void InvokeClientes(int n)
 	{
 		System::Random r;
 		for (int i = 0; i < nCliente; i++)
