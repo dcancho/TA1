@@ -4,15 +4,13 @@
 class Mozo : public Entidad {
 protected:
 	short score;
-	char caracteres;
 	int color;
 public:
 	//constructores
 	Mozo(){}
-	Mozo(short posX, short posY, short v, short dX, short dY, short score, char caracter, int color) :Entidad(posX, posY, v, dX, dY) {
+	Mozo(short posX, short posY, short v, short dX, short dY, short score, int color) :Entidad(posX, posY, v, dX, dY) {
 		this->score = score;
 		this->color = color;
-		caracteres = caracter;
 		posX= 5 - rand() % (75 + 1 - 5);
 		posY= 5 - rand() % (35 + 1 - 5);
 	}
