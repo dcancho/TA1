@@ -27,8 +27,9 @@ public:
 
 		if (posX == -1 || posX == 81)
 		{
-			posX == posX - int(dX*v);
+			posX == posX - int(dX * v);
 			dX == dX * -1;
 		}
+	}
 };
 

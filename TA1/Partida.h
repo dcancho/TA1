@@ -54,6 +54,8 @@ public:
 		tCliente = t;
 		duration = gameDuration;
 		timeElapsed = gameTimeElapsed;
+		mesas = InitMesas();
+		mozos = InitMozos();
 	}
 
 	~Partida()
@@ -64,11 +66,11 @@ public:
 		delete[] clientes;
 	}
 
-	void InitMesas(short nMesas=4)
+	Mesa** InitMesas(short nMesas=4)
 	{
 
 	}
-	void InitMozos(short nMozos=6)
+	Mozo** InitMozos(short nMozos=6)
 	{
 
 	}
@@ -84,4 +86,6 @@ public:
 	{
 
 	}
+	Mesa** getMesas() { return mesas; }
+	Mozo** getMozos() { return mozos; }
 };
