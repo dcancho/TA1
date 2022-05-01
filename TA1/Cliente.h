@@ -12,10 +12,6 @@ public:
 	Cliente(short x, short y, short v, short desX, short desY, bool isVIP) : Entidad(x, y, v, desX, desY) {
 		System::Random r;
 		this->isVIP = isVIP;
-		posX = x;
-		posY= y;
-		dX = desX;
-		dY = desY;
 	}
 	//Destructor
 	~Cliente() {}
@@ -38,10 +34,15 @@ public:
 		Console::SetCursorPosition(posX, posY);
 		cout << " ";
 	}
-	void MoverCliente() 
+	bool MoverCliente() 
 	{
-		setX(posX++);
-		setY(posY++);
+		posX += dX;
+		posY += dY;
+		if (posX > 79 || posY > 39)
+		{
+			return true;
+		}
+		return false;
 	}
 
 	void DibujarCliente() {

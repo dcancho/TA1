@@ -63,28 +63,12 @@ int main()
 
 		partida->moverClientes();
 
-		/*for (short i = 0; i < cantClientes; i++)
-		{
-			partida->getClientes()[i].BorrarCliente();
-			partida->getClientes()[i].MoverCliente();
-			partida->getClientes()[i].DibujarCliente();
-		}*/
-
-
 		_sleep(250);
 		timeElapsed += 250;
 		partida->setTimeElapsed(timeElapsed);
 	} while (timeElapsed < 120000);
 	partida->~Partida();
 
-
-	for (int i = 0; i < 4; i++)
-	{
-		partida->getMesas()[0]->PrintMesa();
-		partida->getMesas()[1]->PrintMesa();
-		partida->getMesas()[2]->PrintMesa();
-		partida->getMesas()[3]->PrintMesa();
-	}
 	_getch();
 	return 0;
 }

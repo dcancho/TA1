@@ -11,8 +11,6 @@ public:
 	Mozo(short posX, short posY, short v, short dX, short dY, short score, int color) :Entidad(posX, posY, v, dX, dY) {
 		this->score = score;
 		this->color = color;
-		posX= 0;
-		posY= 0;
 	}
 	//Destructor
 	~Mozo() {}

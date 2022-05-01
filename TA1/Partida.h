@@ -136,10 +136,15 @@ public:
 
 	void moverClientes()
 	{
+		bool deleteAll = false;
 		for (int i = 0; i < clientes.size(); i++)
 		{
-			clientes[i].MoverCliente();
-			clientes[i].DibujarCliente();
+			clientes[i].BorrarCliente();
+			deleteAll = clientes[i].MoverCliente();
+			if (!deleteAll)
+			{
+				clientes[i].DibujarCliente();
+			}
 		}
 	}
 
