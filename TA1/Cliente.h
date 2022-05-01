@@ -40,6 +40,9 @@ public:
 		posY += dY;
 		if (posX > 79 || posY > 39)
 		{
+			posX = 79;
+			posY = 39;
+			BorrarCliente();
 			return true;
 		}
 		return false;

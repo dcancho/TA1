@@ -68,10 +68,10 @@ public:
 	Mesa** InitMesas(short nMesas=4)
 	{
 		Mesa** mesas = new Mesa * [4];
-		mesas[0] = new Mesa('A', 9, 9);
-		mesas[1] = new Mesa('B', 63, 9);
-		mesas[2] = new Mesa('C', 9, 29);
-		mesas[3] = new Mesa('D', 63, 29);
+		mesas[0] = new Mesa('A', 10, 10);
+		mesas[1] = new Mesa('B', 64, 10);
+		mesas[2] = new Mesa('C', 10, 28);
+		mesas[3] = new Mesa('D', 64, 28);
 		return mesas;
 	}
 	Mozo** InitMozos(short nMozos=6)
