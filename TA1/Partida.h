@@ -92,7 +92,7 @@ public:
 		System::Random r;
 		for (int i = 0; i < nCliente; i++)
 		{
-			clientes.emplace_back(new Cliente(short(r.Next(0, 80)), (short(79 * r.Next(0, 2))), 1, 0, 1, false));
+			clientes.emplace_back(Cliente(short(r.Next(0, 80)), (short(39 * r.Next(0, 2))), 1, 0, 1, false));
 		}
 	}
 	void InvokeClientesVIP()
@@ -100,12 +100,24 @@ public:
 		System::Random r;
 		for (int i = 0; i < nCliente; i++)
 		{
-			clientes.emplace_back(new Cliente(short(r.Next(0, 80)), (short(79 * r.Next(0, 2))), 1, 0, 1, true));
+			clientes.emplace_back(Cliente(short(r.Next(0, 39)), (short(79 * r.Next(0, 2))), 1, 1, 0, true));
 		}
 	}
+	
 	void TerminarPartida()
 	{
-
+		short position = 0;
+		short maxScore = 0;
+		for (int i = 0; i < 6; i++)
+		{
+			if (mozos[i]->getScore() > maxScore)
+			{
+				maxScore = mozos[i]->getScore();
+				position = i;
+			}
+		}
+		system("clr");
+		printf("El mozo %hd es el ganador  con %hd puntos y es el nuevo duenno del restaurante!!!", &position, &maxScore);
 	}
 	Mesa** getMesas() { return mesas; }
 	Mozo** getMozos() { return mozos; }
