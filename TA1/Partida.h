@@ -68,11 +68,19 @@ public:
 
 	Mesa** InitMesas(short nMesas=4)
 	{
-
+		Mesa** mesas = new Mesa * [4];
+		mesas[0] = new Mesa('A', 9, 9);
+		mesas[1] = new Mesa('B', 63, 9);
+		mesas[2] = new Mesa('C', 9, 29);
+		mesas[3] = new Mesa('D', 63, 29);
+		return mesas;
 	}
 	Mozo** InitMozos(short nMozos=6)
 	{
+		System::Random r;
 
+		Mozo** mozos = new Mozo * [6];
+		mozos[1] = new Mozo(r.Next(0, 81), r.Next(0, 41), 1, r.Next(0,2), r.Next(0,2), 0, 1);
 	}
 	void InvokeClientes()
 	{
