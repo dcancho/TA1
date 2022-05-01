@@ -2,6 +2,7 @@
 #include "Mesa.h"
 #include "Mozo.h"
 #include "Cliente.h"
+#include <vector>
 
 class Partida
 {
@@ -15,7 +16,7 @@ private:
 	short tCliente;
 	Mesa** mesas;
 	Mozo** mozos;
-	Cliente** clientes;
+	vector<Cliente>clientes;
 
 public:
 	/// <summary>
@@ -32,7 +33,6 @@ public:
 		tCliente = 30000;
 		mesas = nullptr;
 		mozos = nullptr;
-		clientes = nullptr;
 	}
 
 	/// <summary>
@@ -63,7 +63,6 @@ public:
 		TerminarPartida();
 		delete[] mesas;
 		delete[] mozos;
-		delete[] clientes;
 	}
 
 	Mesa** InitMesas(short nMesas=4)
@@ -80,21 +79,29 @@ public:
 		System::Random r;
 
 		Mozo** mozos = new Mozo * [6];
-		mozos[0] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 1);
-		mozos[1] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 2);
-		mozos[2] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 3);
-		mozos[3] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 4);
-		mozos[4] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 5);
-		mozos[5] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 6);
+		mozos[0] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), 1, short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 1);
+		mozos[1] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), 1, short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 2);
+		mozos[2] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), 1, short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 3);
+		mozos[3] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), 1, short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 4);
+		mozos[4] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), 1, short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 5);
+		mozos[5] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), 1, short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 6);
 		return mozos;
 	}
 	void InvokeClientes()
 	{
-		Cliente** clientes = new Cliente*[5];
+		System::Random r;
+		for (int i = 0; i < nCliente; i++)
+		{
+			clientes.emplace_back(new Cliente(short(r.Next(0, 80)), (short(79 * r.Next(0, 2))), 1, 0, 1, false));
+		}
 	}
 	void InvokeClientesVIP()
 	{
-
+		System::Random r;
+		for (int i = 0; i < nCliente; i++)
+		{
+			clientes.emplace_back(new Cliente(short(r.Next(0, 80)), (short(79 * r.Next(0, 2))), 1, 0, 1, true));
+		}
 	}
 	void TerminarPartida()
 	{

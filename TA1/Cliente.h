@@ -9,9 +9,8 @@ protected:
 public:
 	//constructores
 	Cliente() {}
-	Cliente(short posX, short posY, short v, short dX, short dY, bool isVIP, char** carcateres) :Entidad(posX, posY, v, dX, dY) {
+	Cliente(short posX, short posY, short v, short dX, short dY, bool isVIP) :Entidad(posX, posY, v, dX, dY) {
 		this->isVIP = isVIP;
-		caracteres = new char* [0];
 		posX = 5 - rand() % (75 + 1 - 5);
 		posY= 5 - rand() % (35 + 1 - 5);
 		dY = 2;
