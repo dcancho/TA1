@@ -15,6 +15,7 @@ public:
 		posX = 5 - rand() % (75 + 1 - 5);
 		posY= 5 - rand() % (35 + 1 - 5);
 		dY = 2;
+		dX = 2;
 	}
 	//Destructor
 	~Cliente() {}
