@@ -2,6 +2,7 @@
 #include "Mesa.h"
 #include "Mozo.h"
 #include "Cliente.h"
+#include"Silla.h"
 
 class Partida
 {
@@ -88,9 +89,14 @@ public:
 		mozos[5] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 6);
 		return mozos;
 	}
-	void InvokeClientes()
+	void InvokeClientes(int n)
 	{
-		Cliente** clientes = new Cliente*[5];
+
+		for (int i = 0; i < n; i++)
+		{
+			Cliente** clientes = new Cliente * [n];
+		}
+		
 	}
 	void InvokeClientesVIP()
 	{
@@ -99,6 +105,12 @@ public:
 	void TerminarPartida()
 	{
 
+	}
+	void Cliente_Silla(int n) {
+		if (clientes[n]->getdY_Cliente()==8 || clientes[n]->getdX_Cliente()==9|| clientes[n]->getdX_Cliente() == 67 || clientes[n]->getdY_Cliente() == 32 )
+		{
+
+		}
 	}
 	Mesa** getMesas() { return mesas; }
 	Mozo** getMozos() { return mozos; }
