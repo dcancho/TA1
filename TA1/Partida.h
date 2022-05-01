@@ -80,11 +80,17 @@ public:
 		System::Random r;
 
 		Mozo** mozos = new Mozo * [6];
-		mozos[1] = new Mozo(r.Next(0, 81), r.Next(0, 41), 1, r.Next(0,2), r.Next(0,2), 0, 1);
+		mozos[0] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), 1, short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 1);
+		mozos[1] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), 1, short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 2);
+		mozos[2] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), 1, short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 3);
+		mozos[3] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), 1, short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 4);
+		mozos[4] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), 1, short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 5);
+		mozos[5] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), 1, short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 6);
+		return mozos;
 	}
 	void InvokeClientes()
 	{
-
+		Cliente** clientes = new Cliente*[5];
 	}
 	void InvokeClientesVIP()
 	{
