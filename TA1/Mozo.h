@@ -33,7 +33,7 @@ public:
 		Console::SetCursorPosition(posX, posY);
 		cout << "   ";
 	}
-	void Dibujar(int color) {
+	void Dibujar() {
 		switch (color)
 		{
 		case 1: Console::ForegroundColor = ConsoleColor::Red;

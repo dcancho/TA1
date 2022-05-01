@@ -41,6 +41,8 @@ public:
 		{
 			Console::SetCursorPosition(posX+i, posY);
 			cout << ASCII[i];
+
+			//cambiar color dependiendo isOccupied
 		}
 	}
 

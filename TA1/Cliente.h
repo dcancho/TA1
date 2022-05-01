@@ -10,9 +10,10 @@ public:
 	//constructores
 	Cliente() {}
 	Cliente(short posX, short posY, short v, short dX, short dY, bool isVIP) :Entidad(posX, posY, v, dX, dY) {
+		System::Random r;
 		this->isVIP = isVIP;
-		posX = 5 - rand() % (75 + 1 - 5);
-		posY= 5 - rand() % (35 + 1 - 5);
+		posX = r.Next(0,80);
+		posY= r.Next(0,40);
 		dY = 2;
 		dX = 2;
 	}
@@ -32,17 +33,17 @@ public:
 	void setisVIP(bool v) { isVIP = v; }
     // min - rand()%(maximo + 1-min)//
 	//Metodos - borrar - mover - dibujar
-	void Borrar() {
+	void BorrarCliente() {
 		Console::SetCursorPosition(posX, posY);
 		cout << " ";
 	}
-	void Mover() {
+	void MoverCliente() {
 		if (posY > 38 || posY < 1) {
-			Borrar();
+			BorrarCliente();
 		}
 		posY += dY;
 	}
-	void Dibujar() {
+	void DibujarCliente() {
 		Console::ForegroundColor = ConsoleColor::White;
 		Console::SetCursorPosition(posX, posY); cout << "O";
 	}
@@ -53,7 +54,7 @@ public:
 	}
 	void Mover_ClienteVIP() {
 		if (posX > 78 || posX < 1) {
-			Borrar();
+			BorrarCliente();
 		}
 		posX+= dX;
 	}
