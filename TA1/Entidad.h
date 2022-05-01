@@ -36,5 +36,13 @@ public:
 			dY = dY * -1;
 		}
 	}
+	void setX(short x)
+	{
+		posX = x;
+	}
+	void setY(short y)
+	{
+		posY = y;
+	}
 };
 

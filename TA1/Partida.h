@@ -87,12 +87,12 @@ public:
 		mozos[5] = new Mozo(short(r.Next(0, 79)), short(r.Next(0, 39)), 1, short(r.Next(0, 2) - 1), short(r.Next(0, 2) - 1), 0, 6);
 		return mozos;
 	}
-	void InvokeClientes(int n)
+	void InvokeClientes()
 	{
 		System::Random r;
-		for (int i = 0; i < nCliente; i++)
+		for (int i = 0; i < xCliente; i++)
 		{
-			clientes.emplace_back(Cliente(short(r.Next(0, 80)), (short(39 * r.Next(0, 2))), 1, 0, 1, false));
+			clientes.push_back(Cliente(short(r.Next(0, 80)), 0, 1, 0, 1, false));
 		}
 	}
 	void InvokeClientesVIP()
@@ -100,7 +100,7 @@ public:
 		System::Random r;
 		for (int i = 0; i < 6; i++)
 		{
-			clientes.emplace_back(Cliente(short(r.Next(0, 39)), (short(79 * r.Next(0, 2))), 1, 1, 0, true));
+			clientes.push_back(Cliente(0, (short(r.Next(0, 40))), 1, 1, 0, true));
 		}
 	}
 	void TerminarPartida()
@@ -115,7 +115,7 @@ public:
 				position = i;
 			}
 		}
-		system("clr");
+		system("cls");
 		printf("El mozo %hd es el ganador  con %hd puntos y es el nuevo duenno del restaurante!!!", &position, &maxScore);
 	}
 	Mesa** getMesas() { return mesas; }
@@ -124,7 +124,7 @@ public:
 	{
 		return timeElapsed;
 	}
-	short getClientesAmount()
+	short getClientesSize()
 	{
 		return clientes.size();
 	}
@@ -132,6 +132,15 @@ public:
 	vector<Cliente> getClientes()
 	{
 		return clientes;
+	}
+
+	void moverClientes()
+	{
+		for (int i = 0; i < clientes.size(); i++)
+		{
+			clientes[i].MoverCliente();
+			clientes[i].DibujarCliente();
+		}
 	}
 
 	void setTimeElapsed(int timeelapsed)

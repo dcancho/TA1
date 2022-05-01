@@ -9,13 +9,13 @@ protected:
 public:
 	//constructores
 	Cliente() {}
-	Cliente(short posX, short posY, short v, short dX, short dY, bool isVIP) :Entidad(posX, posY, v, dX, dY) {
+	Cliente(short x, short y, short v, short desX, short desY, bool isVIP) : Entidad(x, y, v, desX, desY) {
 		System::Random r;
 		this->isVIP = isVIP;
-		posX = r.Next(0,80);
-		posY= r.Next(0,40);
-		dY = 2;
-		dX = 2;
+		posX = x;
+		posY= y;
+		dX = desX;
+		dY = desY;
 	}
 	//Destructor
 	~Cliente() {}
@@ -31,32 +31,26 @@ public:
 	void setdX_Cliente(short v) { dX = v; }
 	void setdY_Cliente(short v) { dY = v; }
 	void setisVIP(bool v) { isVIP = v; }
+
     // min - rand()%(maximo + 1-min)//
 	//Metodos - borrar - mover - dibujar
 	void BorrarCliente() {
 		Console::SetCursorPosition(posX, posY);
 		cout << " ";
 	}
-	void MoverCliente() {
-		if (posY > 38 || posY < 1) {
-			BorrarCliente();
-		}
-		posY += dY;
-	}
-	void DibujarCliente() {
-		Console::ForegroundColor = ConsoleColor::White;
-		Console::SetCursorPosition(posX, posY); cout << "O";
-	}
-	void ClientesVIP_Draw() {
-		Console::ForegroundColor = ConsoleColor::Red;
-		Console::SetCursorPosition(posX, posY); cout << "O";
-		Console::ForegroundColor = ConsoleColor::White;
-	}
-	void Mover_ClienteVIP() {
-		if (posX > 78 || posX < 1) {
-			BorrarCliente();
-		}
-		posX+= dX;
+	void MoverCliente() 
+	{
+		setX(posX++);
+		setY(posY++);
 	}
 
+	void DibujarCliente() {
+		if (isVIP)
+		{
+			Console::ForegroundColor = ConsoleColor::Red;
+		}
+		Console::SetCursorPosition(posX, posY);
+		cout << "O";
+		Console::ForegroundColor = ConsoleColor::White;
+	}
 };

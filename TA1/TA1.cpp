@@ -37,9 +37,10 @@ int main()
 	short cantClientes = 0;
 	do
 	{
+		Console::CursorVisible = false;
 		if (timeElapsed % t == 0 && nRemainingClientes > 0)
 		{
-			partida->InvokeClientes(x);
+			partida->InvokeClientes();
 			nRemainingClientes--;
 		}
 		if (timeElapsed % 30000 == 0 && nRemainingClientesVIP > 0)
@@ -57,26 +58,24 @@ int main()
 			partida->getMozos()[i]->MoverEntidad();
 			partida->getMozos()[i]->Dibujar();
 		}
-		/*
-		cantClientes = partida->getClientesAmount();
-		for (int i = 0; i < cantClientes; i++)
+
+		cantClientes = partida->getClientesSize();
+
+		partida->moverClientes();
+
+		/*for (short i = 0; i < cantClientes; i++)
 		{
 			partida->getClientes()[i].BorrarCliente();
-			if (partida->getClientes()[i].getisVIP())
-			{
-				partida->getClientes()[i].MoverEntidad();
-			}
-			else
-			{
-				partida->getClientes()[i].MoverEntidad();
-			}
+			partida->getClientes()[i].MoverCliente();
 			partida->getClientes()[i].DibujarCliente();
 		}*/
+
 
 		_sleep(250);
 		timeElapsed += 250;
 		partida->setTimeElapsed(timeElapsed);
 	} while (timeElapsed < 120000);
+	partida->~Partida();
 
 
 	for (int i = 0; i < 4; i++)
