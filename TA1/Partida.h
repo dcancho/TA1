@@ -2,7 +2,7 @@
 #include "Mesa.h"
 #include "Mozo.h"
 #include "Cliente.h"
-#include"Silla.h"
+#include <vector>
 
 class Partida
 {
@@ -16,7 +16,7 @@ private:
 	short tCliente;
 	Mesa** mesas;
 	Mozo** mozos;
-	Cliente** clientes;
+	vector<Cliente>clientes;
 
 public:
 	/// <summary>
@@ -33,7 +33,6 @@ public:
 		tCliente = 30000;
 		mesas = nullptr;
 		mozos = nullptr;
-		clientes = nullptr;
 	}
 
 	/// <summary>
@@ -64,7 +63,6 @@ public:
 		TerminarPartida();
 		delete[] mesas;
 		delete[] mozos;
-		delete[] clientes;
 	}
 
 	Mesa** InitMesas(short nMesas=4)
@@ -81,36 +79,45 @@ public:
 		System::Random r;
 
 		Mozo** mozos = new Mozo * [6];
-		mozos[0] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 1);
-		mozos[1] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 2);
-		mozos[2] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 3);
-		mozos[3] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 4);
-		mozos[4] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 5);
-		mozos[5] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 6);
+		mozos[0] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), 1, short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 1);
+		mozos[1] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), 1, short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 2);
+		mozos[2] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), 1, short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 3);
+		mozos[3] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), 1, short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 4);
+		mozos[4] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), 1, short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 5);
+		mozos[5] = new Mozo(short(r.Next(0, 81)), short(r.Next(0, 41)), 1, short(r.Next(0, 2)), short(r.Next(0, 2)), 0, 6);
 		return mozos;
 	}
 	void InvokeClientes(int n)
 	{
-
-		for (int i = 0; i < n; i++)
+		System::Random r;
+		for (int i = 0; i < nCliente; i++)
 		{
-			Cliente** clientes = new Cliente * [n];
+			clientes.emplace_back(Cliente(short(r.Next(0, 80)), (short(39 * r.Next(0, 2))), 1, 0, 1, false));
 		}
-		
 	}
 	void InvokeClientesVIP()
 	{
-
+		System::Random r;
+		for (int i = 0; i < nCliente; i++)
+		{
+			clientes.emplace_back(Cliente(short(r.Next(0, 39)), (short(79 * r.Next(0, 2))), 1, 1, 0, true));
+		}
 	}
+	
 	void TerminarPartida()
 	{
-
-	}
-	void Cliente_Silla(int n) {
-		if (clientes[n]->getdY_Cliente()==8 || clientes[n]->getdX_Cliente()==9|| clientes[n]->getdX_Cliente() == 67 || clientes[n]->getdY_Cliente() == 32 )
+		short position = 0;
+		short maxScore = 0;
+		for (int i = 0; i < 6; i++)
 		{
-
+			if (mozos[i]->getScore() > maxScore)
+			{
+				maxScore = mozos[i]->getScore();
+				position = i;
+			}
 		}
+		system("clr");
+		printf("El mozo %hd es el ganador  con %hd puntos y es el nuevo duenno del restaurante!!!", &position, &maxScore);
 	}
 	Mesa** getMesas() { return mesas; }
 	Mozo** getMozos() { return mozos; }

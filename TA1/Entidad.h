@@ -27,13 +27,13 @@ public:
 
 		if (posX == -1 || posX == 81)
 		{
-			posX == posX - int(dX * v);
-			dX == dX * -1;
+			posX = posX - int(dX * v);
+			dX = dX * -1;
 		}
 		else if (posY == -1 || posY == 41)
 		{
-			posY == posY - int(dY * v);
-			dY == dY * -1;
+			posY = posY - int(dY * v);
+			dY = dY * -1;
 		}
 	}
 };
