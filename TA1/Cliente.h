@@ -42,10 +42,20 @@ public:
 		}
 		posY += dY;
 	}
-	void Dibuujar() {
+	void Dibujar() {
 		Console::ForegroundColor = ConsoleColor::White;
 		Console::SetCursorPosition(posX, posY); cout << "O";
 	}
-
+	void ClientesVIP_Draw() {
+		Console::ForegroundColor = ConsoleColor::Red;
+		Console::SetCursorPosition(posX, posY); cout << "O";
+		Console::ForegroundColor = ConsoleColor::White;
+	}
+	void Mover_ClienteVIP() {
+		if (posX > 78 || posX < 1) {
+			Borrar();
+		}
+		posX+= dX;
+	}
 
 };
